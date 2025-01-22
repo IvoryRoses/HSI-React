@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { NavList } from "./constants";
+import { NavList } from "./data/constants";
 import { FaArrowRight } from "react-icons/fa";
 import HSILogo from "./assets/HSI_Logo.png";
 
@@ -15,13 +15,13 @@ export default function NavigationBar() {
   };
 
   return (
-    <nav className="flex fixed top-0 left-0 w-full h-24 gap-28 justify-center items-center  shadow-md">
+    <nav className="flex fixed z-10 top-0 left-0 w-full h-24 gap-28 justify-center items-center bg-gradient-to-b from-white from-60% to-yellow-200 shadow-md">
       <img
         onClick={jumpToUp}
         src={HSILogo}
         className="w-26 h-10 cursor-pointer"
       />
-      <ul className="flex gap-12">
+      <ul className="flex gap-10">
         {NavList.map((navItem) => (
           <li key={navItem.id} onClick={jumpToUp}>
             <Link
