@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { NavList } from "./data/constants";
+import routes from "./routes";
 import { FaArrowRight } from "react-icons/fa";
 import HSILogo from "./assets/HSI_Logo.png";
 
@@ -22,13 +22,13 @@ export default function NavigationBar() {
         className="w-26 h-10 cursor-pointer"
       />
       <ul className="flex gap-10">
-        {NavList.map((navItem) => (
-          <li key={navItem.id} onClick={jumpToUp}>
+        {routes.map((route) => (
+          <li key={route.id} onClick={jumpToUp}>
             <Link
-              to={navItem.url}
+              to={route.path}
               className="text-base font-bold text-white transition duration-500 hover:text-[#f0c62f]"
             >
-              {navItem.title}
+              {route.title}
             </Link>
           </li>
         ))}

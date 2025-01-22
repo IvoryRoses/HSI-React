@@ -1,5 +1,5 @@
 import NavigationBar from "../NavigationBar";
-import { CarouselData } from "../data/constants";
+import { CarouselData } from "../data/Constants";
 import { Carousel } from "../data/Carousel";
 
 export default function Home() {
