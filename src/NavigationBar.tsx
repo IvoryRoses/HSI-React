@@ -1,29 +1,43 @@
 import { Link } from "react-router-dom";
 import { NavList } from "./constants";
+import { FaArrowRight } from "react-icons/fa";
 import HSILogo from "./assets/HSI_Logo.png";
 
 export default function NavigationBar() {
+  const jumpToUp = () => {
+    const topElement = document.querySelector("#top") as HTMLElement;
+    if (topElement) {
+      window.scrollTo({
+        top: topElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <nav className="flex fixed top-0 left-0 w-full h-20 mt-5 gap-28 justify-center items-center">
-      <img src={HSILogo} className="w-32 h-12" />
+    <nav className="flex fixed top-0 left-0 w-full h-24 gap-28 justify-center items-center  shadow-md">
+      <img
+        onClick={jumpToUp}
+        src={HSILogo}
+        className="w-26 h-10 cursor-pointer"
+      />
       <ul className="flex gap-12">
-        {NavList.map((NavList) => (
-          <Link to={NavList.url}>
-            <li
-              key={NavList.id}
-              className="text-lg font-bold text-[#161516] transition duration-500 hover:text-[#f0c62f]"
+        {NavList.map((navItem) => (
+          <li key={navItem.id} onClick={jumpToUp}>
+            <Link
+              to={navItem.url}
+              className="text-base font-bold text-[#161516] transition duration-500 hover:text-[#f0c62f]"
             >
-              {NavList.title}
-            </li>
-          </Link>
+              {navItem.title}
+            </Link>
+          </li>
         ))}
       </ul>
       <Link to="/">
-        <button className="w-56 h-16 font-bold rounded-md text-white bg-[#f0c62f] transition duration-500 hover:bg-black">
-          CONSULTANCY
+        <button className="flex items-center justify-center gap-2 w-56 h-14 font-bold rounded-md text-white bg-[#f0c62f] transition duration-500 hover:bg-black">
+          CONSULTANCY <FaArrowRight />
         </button>
       </Link>
     </nav>
   );
-  1;
 }
