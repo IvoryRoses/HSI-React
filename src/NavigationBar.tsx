@@ -15,7 +15,7 @@ export default function NavigationBar() {
   };
 
   return (
-    <nav className="flex fixed z-10 top-0 left-0 w-full h-24 gap-28 justify-center items-center bg-gradient-to-b from-white from-60% to-yellow-200 shadow-md">
+    <nav className="flex fixed z-10 top-0 left-0 w-full h-24 gap-28 backdrop-sm justify-center items-center drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] shadow-md">
       <img
         onClick={jumpToUp}
         src={HSILogo}
@@ -26,7 +26,7 @@ export default function NavigationBar() {
           <li key={navItem.id} onClick={jumpToUp}>
             <Link
               to={navItem.url}
-              className="text-base font-bold text-[#161516] transition duration-500 hover:text-[#f0c62f]"
+              className="text-base font-bold text-white transition duration-500 hover:text-[#f0c62f]"
             >
               {navItem.title}
             </Link>

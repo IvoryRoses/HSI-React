@@ -13,6 +13,9 @@ export default function Home() {
         <div className="h-screen flex items-center justify-center bg-gray-100">
           <h2 className="text-3xl font-bold">Second Page</h2>
         </div>
+        <div className="h-screen flex items-center justify-center bg-white">
+          <h2 className="text-3xl font-bold">Third Page</h2>
+        </div>
       </div>
     </>
   );
