@@ -13,7 +13,7 @@ interface CarouselProps {
 
 export const Carousel: React.FC<CarouselProps> = ({
   images,
-  interval = 3000,
+  interval = 5000,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
